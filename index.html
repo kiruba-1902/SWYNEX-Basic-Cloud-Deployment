@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple task manager deployed as a cloud-hosted static web application.">
+  <title>CloudTask | SWYNEX Deployment Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">C</span> CloudTask</a>
+    <span class="tag">SWYNEX · CLOUD DEPLOYMENT DEMO</span>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p class="eyebrow">YOUR WORKSPACE</p>
+      <h1>Make today <span>count.</span></h1>
+      <p class="subheading">A simple task manager demonstrating a cloud-hosted web application.</p>
+    </section>
+
+    <section class="stats" aria-label="Task summary">
+      <article class="stat"><span>Total tasks</span><strong id="totalCount">0</strong></article>
+      <article class="stat"><span>Completed</span><strong id="completedCount">0</strong></article>
+      <article class="stat"><span>Remaining</span><strong id="remainingCount">0</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div><p class="eyebrow">TASK LIST</p><h2>My tasks</h2></div>
+        <span class="live-label"><i></i> App is running</span>
+      </div>
+      <form id="taskForm" class="add-form">
+        <label class="sr-only" for="taskInput">New task</label>
+        <input id="taskInput" type="text" maxlength="100" placeholder="What needs to get done?" required>
+        <button type="submit">Add task <span>＋</span></button>
+      </form>
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">✓</div>
+        <strong>You're all caught up.</strong>
+        <p>Add a task above to get started.</p>
+      </div>
+      <ul id="taskList" class="task-list" aria-live="polite"></ul>
+      <div class="panel-footer"><span id="taskSummary">Your tasks stay in this browser.</span><button id="clearCompleted" class="text-button" type="button">Clear completed</button></div>
+    </section>
+
+    <section class="note">
+      <strong>Deployment note</strong>
+      <p>This is a static front-end demo hosted on a public cloud hosting platform. Tasks are saved in browser local storage; no backend database or AWS service is connected.</p>
+    </section>
+  </main>
+
+  <footer>Built for SWYNEX Internship · Task 2: Basic Cloud Deployment</footer>
+  <script src="script.js"></script>
+</body>
+</html>
